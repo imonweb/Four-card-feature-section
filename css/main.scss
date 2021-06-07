@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ 
+/* ====== Variables ====== */
+ 
+/*  Primary Colors */
+$Red: hsl(0, 78%, 62%);
+$Cyan: hsl(180, 62%, 55%);
+$Orange: hsl(34, 97%, 64%);
+$Blue: hsl(212, 86%, 64%);
+/*  Neutral Colors */
+$VeryDarkBlue: hsl(234, 12%, 34%);
+$GrayishBlue: hsl(229, 6%, 66%);
+$VeryLightGray: hsl(0, 0%, 98%);
+
+ 
+/* ====== Base ====== */
+ 
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  background-color: $VeryLightGray;
+  min-height: 100vh;
+  padding-top: 85px;
+  @media(max-width: 768px){
+    padding: 30px;
+  }
+}
+
+/*  Main */
+
+main {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  h1 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 200;
+    color: $VeryDarkBlue;
+    span {
+      display: block;
+      font-weight: 600;
+    }
+  }
+  p {
+    max-width: calc(1440px/2);
+    margin-left: auto;
+    margin-right: auto;
+    color: $GrayishBlue;  
+  }
+  section {
+    article:nth-child(1) {
+      transform: translateY(50%);
+      border-top: 5px solid $Cyan;
+    }
+    article:nth-child(2) {
+      
+      border-top: 5px solid $Red;
+    }
+    article:nth-child(3) {
+      transform: translateY(50%);
+      border-top: 5px solid $Blue;
+    }
+     article:nth-child(4) {
+      border-top: 5px solid $Orange;
+      
+    }
+    @media(max-width: 768px){
+    
+     article:nth-child(1) {
+        transform: translateY(0%);
+        border-top: 5px solid $Cyan;
+      }
+      article:nth-child(3) {
+        transform: translateY(0%);
+        border-top: 5px solid $Blue;
+      }
+      article {
+        // margin-left: 2rem;
+        // margin-right: 2rem;
+        margin: 0 0 30px 0;
+        width: 100%;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: flex-start;
+        // flex-wrap: wrap;
+        // text-align: left;
+      }
+   }
+
+  }
+  article {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    width: 30%;
+    height: 250px;
+    background-color: #fff;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba($GrayishBlue, 0.4);
+    h2.article__title {
+      margin-bottom: .6rem;
+      color: $VeryDarkBlue;
+    }
+    p.article__description {
+      font-size: 14px;
+    }
+    .article__img {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+    }
+  }
+}
